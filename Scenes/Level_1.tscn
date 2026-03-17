@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dq1pwfvik0sx0" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_i63mn"]
 [ext_resource type="TileSet" uid="uid://coj0kaemb6dur" path="res://Sprites/Tiles/new_tile_set.tres" id="1_oiua3"]
 [ext_resource type="PackedScene" uid="uid://d3o6tt470nmn6" path="res://Scenes/player.tscn" id="3_vnunq"]
+[ext_resource type="PackedScene" uid="uid://cl0eipfp0gtgq" path="res://Scenes/enemy.tscn" id="4_nw7js"]
+[ext_resource type="PackedScene" uid="uid://cxig6ubnu6u28" path="res://Scenes/coin.tscn" id="5_nh7xm"]
+[ext_resource type="PackedScene" uid="uid://bfb4mhx8e2pkm" path="res://Scenes/end_flag.tscn" id="6_j0k67"]
 
 [node name="Main" type="Node2D" unique_id=1933524978]
 
@@ -16,8 +19,43 @@ tile_set = ExtResource("1_oiua3")
 
 [node name="Player" parent="." unique_id=25342595 instance=ExtResource("3_vnunq")]
 position = Vector2(-1, -18)
-move_speed = null
-acceleration = null
-braking = null
-gravity = null
-jump_force = null
+
+[node name="Coins" type="Node" parent="." unique_id=282660935]
+
+[node name="Coin" parent="Coins" unique_id=716479242 instance=ExtResource("5_nh7xm")]
+position = Vector2(101, -26)
+
+[node name="Coin2" parent="Coins" unique_id=1100728009 instance=ExtResource("5_nh7xm")]
+position = Vector2(207, -6)
+
+[node name="Coin3" parent="Coins" unique_id=1943277198 instance=ExtResource("5_nh7xm")]
+position = Vector2(313, 28)
+
+[node name="Coin4" parent="Coins" unique_id=1816712810 instance=ExtResource("5_nh7xm")]
+position = Vector2(498, 11)
+
+[node name="Coin5" parent="Coins" unique_id=886801268 instance=ExtResource("5_nh7xm")]
+position = Vector2(586, -45)
+
+[node name="Coin6" parent="Coins" unique_id=1403444519 instance=ExtResource("5_nh7xm")]
+position = Vector2(670, -43)
+
+[node name="Coin7" parent="Coins" unique_id=1565409935 instance=ExtResource("5_nh7xm")]
+position = Vector2(736, -96)
+
+[node name="Enemies" type="Node" parent="." unique_id=1224261806]
+
+[node name="Enemy" parent="Enemies" unique_id=1722598250 instance=ExtResource("4_nw7js")]
+position = Vector2(-1, 43)
+
+[node name="Enemy2" parent="Enemies" unique_id=613775982 instance=ExtResource("4_nw7js")]
+position = Vector2(105, 60)
+
+[node name="Enemy3" parent="Enemies" unique_id=1172854056 instance=ExtResource("4_nw7js")]
+position = Vector2(214, 96)
+
+[node name="Enemy4" parent="Enemies" unique_id=135633501 instance=ExtResource("4_nw7js")]
+position = Vector2(397, 96)
+
+[node name="EndFlag" parent="." unique_id=395448469 instance=ExtResource("6_j0k67")]
+position = Vector2(550, 9)

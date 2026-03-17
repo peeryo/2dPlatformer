@@ -15,6 +15,10 @@ run/main_scene="uid://banbl4xboarvm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerStats="*uid://wi60kbwekn56"
+
 [input]
 
 move_left={
