@@ -16,3 +16,8 @@ tile_set = ExtResource("1_oiua3")
 
 [node name="Player" parent="." unique_id=25342595 instance=ExtResource("3_vnunq")]
 position = Vector2(-1, -18)
+move_speed = null
+acceleration = null
+braking = null
+gravity = null
+jump_force = null
