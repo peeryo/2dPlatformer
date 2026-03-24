@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://banbl4xboarvm"]
 
+[ext_resource type="Script" uid="uid://5qvjj1havtdr" path="res://Scripts/background_parallax.gd" id="1_5r5j8"]
 [ext_resource type="Texture2D" uid="uid://dq1pwfvik0sx0" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_i63mn"]
 [ext_resource type="TileSet" uid="uid://coj0kaemb6dur" path="res://Sprites/Tiles/new_tile_set.tres" id="1_oiua3"]
 [ext_resource type="PackedScene" uid="uid://d3o6tt470nmn6" path="res://Scenes/player.tscn" id="3_vnunq"]
@@ -9,8 +10,36 @@
 
 [node name="Main" type="Node2D" unique_id=1933524978]
 
-[node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=1371345839]
-position = Vector2(388, -91)
+[node name="Background" type="Node2D" parent="." unique_id=1942535041]
+script = ExtResource("1_5r5j8")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Background" unique_id=1371345839]
+modulate = Color(0.58431375, 1, 0.5176471, 0.7607843)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i63mn")
+
+[node name="BackgroundSprite4" type="Sprite2D" parent="Background" unique_id=405219653]
+modulate = Color(0.58431375, 1, 0.5176471, 0.7607843)
+position = Vector2(-512, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i63mn")
+
+[node name="BackgroundSprite5" type="Sprite2D" parent="Background" unique_id=429323728]
+modulate = Color(0.58431375, 1, 0.5176471, 0.7607843)
+position = Vector2(-1024, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i63mn")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="Background" unique_id=1051990329]
+modulate = Color(0.58431375, 1, 0.5176471, 0.7607843)
+position = Vector2(512, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i63mn")
+
+[node name="BackgroundSprite3" type="Sprite2D" parent="Background" unique_id=1620836587]
+modulate = Color(0.58431375, 1, 0.5176471, 0.7607843)
+position = Vector2(1024, -1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_i63mn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1546510347]
