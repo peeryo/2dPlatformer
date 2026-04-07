@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cl0eipfp0gtgq" path="res://Scenes/enemy.tscn" id="4_nw7js"]
 [ext_resource type="PackedScene" uid="uid://cxig6ubnu6u28" path="res://Scenes/coin.tscn" id="5_nh7xm"]
 [ext_resource type="PackedScene" uid="uid://bfb4mhx8e2pkm" path="res://Scenes/end_flag.tscn" id="6_j0k67"]
+[ext_resource type="PackedScene" uid="uid://b7bbba85cmc0v" path="res://Scenes/Level_2.tscn" id="8_akpl7"]
 
 [node name="Main" type="Node2D" unique_id=1933524978]
 
@@ -88,3 +89,4 @@ position = Vector2(397, 96)
 
 [node name="EndFlag" parent="." unique_id=395448469 instance=ExtResource("6_j0k67")]
 position = Vector2(550, 9)
+scene_to_load = ExtResource("8_akpl7")
