@@ -46,6 +46,9 @@ func _process(delta):
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
 		
+	if global_position.y > 200:
+		game_over()
+		
 	_manage_animation()
 		
 func _manage_animation():
@@ -66,7 +69,7 @@ func take_damage (amount: int):
 		call_deferred("game_over")
 		
 func game_over():
-	get_tree().change_scene_to_file("res://Scenes/Level_1.tscn")	
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")	
 	
 func increase_score(amount : int):
 	PlayerStats.score += amount
