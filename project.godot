@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="2dPlatformer"
+config/name="EXAMPLE-2dPlatformer"
 run/main_scene="uid://banbl4xboarvm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
