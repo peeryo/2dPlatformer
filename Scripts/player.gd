@@ -14,6 +14,9 @@ signal OnUpdateScore(score: int)
 
 var move_input : float
 
+# NEW: Variable to track if we've used our double jump
+var has_double_jumped : bool = false
+
 @onready var sprite: Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
@@ -27,6 +30,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
+	# NEW: Reset the double jump ticket when we hit the ground
+	else:
+		has_double_jumped = false
+	
 	#get the move input
 	move_input = Input.get_axis("move_left", "move_right")
 	
@@ -36,9 +43,15 @@ func _physics_process(delta):
 	else:
 		velocity.x = lerp(velocity.x, 0.0, braking * delta)
 		
-	#jumping
-	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y = -jump_force
+	#UPDATED jumping
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = -jump_force
+		elif not has_double_jumped:
+			#Double jump in the air
+			velocity.y = -jump_force
+			has_double_jumped = true   #this marks DJ ticket as true
+
 	
 	move_and_slide()
 	
